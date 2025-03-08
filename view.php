@@ -23,6 +23,15 @@
             <li><a href="oefening/<?= $i ?>/">Oefening <?= $i ?></a></li>
         <?php endfor; ?>
     </ul>
+
+    <h2>Opdrachten</h2>
+    <ul>
+        <?php
+        for ($i = 1; $i <= $number_of_assignments; $i++):
+            ?>
+            <li><a href="opdracht/<?= $i ?>/">Opdracht <?= $i ?></a></li>
+        <?php endfor; ?>
+    </ul>
 </body>
 
 </html>
