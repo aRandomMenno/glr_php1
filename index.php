@@ -8,3 +8,5 @@ $number_of_exercises = 6;
 $number_of_assignments = 3;
 
 include_once("view.php");
+
+// ~ Maak nog opdracht 3.4?

@@ -1,17 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Playwrite+IT+Moderna:wght@100..400&display=swap');
+
 body {
     font-family: "Playwrite IT Moderna", sans-serif;
-    background: #171717;
-    color: #fff;
+    font-weight: 300;
+    background: #fff;
+    color: #171717;
     font-size: 1.25rem;
 }
 
 a {
     text-decoration: none;
     transition: color 500ms linear;
-    color: chartreuse;
+    color: blue;
 }
 
 a:hover {
     color: red;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #171717;
+        color: #fff;
+    }
+
+    a {
+        color: chartreuse;
+    }
+
+    a:hover {
+        color: red;
+    }
+}
+
+#error_message {
+    color: red;
+    font-weight: 400;
+    font-size: 2rem;
 }
