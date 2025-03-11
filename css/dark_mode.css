@@ -93,10 +93,9 @@ input[type="submit"]:hover {
 
 .error {
     color: red;
-    font-size: 0.9em;
-    display: block;
-    margin-top: 5px;
 }
-input:invalid, textarea:invalid {
+
+input:invalid,
+textarea:invalid {
     border: 2px solid red;
 }
