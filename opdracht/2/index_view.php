@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../css/dark_mode.css">
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -13,7 +14,7 @@
 <body>
     <h2>Hallo mijn naam is <?= $name ?>.</h2>
     <p>
-        Mijn studenten nummer is <?= $stuNum?>.
+        Mijn studenten nummer is <?= $stuNum ?>.
         En ik zit in klas <?= $class ?>.
     </p>
     <h3>Mijn vakken met cijfers:</h3>

@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../css/dark_mode.css">
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -11,8 +12,9 @@
 </head>
 
 <body>
-    <?= $message ?>
-    <br><br>
+    <p>
+        <?= $message ?>
+    </p>
     <p><a href="../..">ga terug</a></p>
 </body>
 

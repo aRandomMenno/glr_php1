@@ -13,6 +13,7 @@ if (!isset($errors)) {
 <html lang="en">
 
 <head>
+    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../css/dark_mode.css">
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -22,7 +23,7 @@ if (!isset($errors)) {
 </head>
 
 <body>
-<?php if (!empty($error)): ?>
+    <?php if (!empty($error)): ?>
         <div style="color: red;">
             <p><?= htmlspecialchars($error) ?></p>
         </div>
@@ -35,7 +36,7 @@ if (!isset($errors)) {
             <?php } ?>
         </ul>
     <?php endif; ?>
-    
+
     <form id="userForm" action="index_process.php" method="post" novalidate>
         <p>
             <label for="name">Wat is je naam?: </label>

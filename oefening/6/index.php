@@ -8,6 +8,7 @@ if (isset($_GET['error'])) {
 <html lang="en">
 
 <head>
+    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../css/dark_mode.css">
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -22,7 +23,7 @@ if (isset($_GET['error'])) {
             <p><?= htmlspecialchars($error) ?></p>
         </div>
     <?php endif; ?>
-    
+
     <form action="index_process.php" method="post">
         <p><label for="name">Wat is je naam?: </label><input type="text" name="name" id="name"></p>
         <p><label for="age">Wat is je leeftijd?: </label><input type="number" name="age" id="age"></p>
