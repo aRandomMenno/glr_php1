@@ -8,4 +8,4 @@ $grades = [7.3, 8.3, 7.8, 8.1];
 
 $classGrades = array_combine($classes, $grades);
 
-include_once("view.php");
+include_once("index_view.php");

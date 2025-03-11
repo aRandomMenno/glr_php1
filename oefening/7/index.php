@@ -36,7 +36,7 @@ if (!isset($errors)) {
         </ul>
     <?php endif; ?>
     
-    <form id="userForm" action="process.php" method="post" novalidate>
+    <form id="userForm" action="index_process.php" method="post" novalidate>
         <p>
             <label for="name">Wat is je naam?: </label>
             <input type="text" name="name" id="name" required>

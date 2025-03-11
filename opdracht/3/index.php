@@ -23,7 +23,7 @@ if (isset($_GET['error'])) {
     ?>>
         <?php echo htmlspecialchars($error); ?>
     </div>
-    <form action="process.php" method="POST">
+    <form action="index_process.php" method="POST">
         <p>
             <label for="name">Wat is je naam?: </label>
             <input type="text" name="name" id="name" required>
@@ -59,7 +59,7 @@ if (isset($_GET['error'])) {
             <input type="submit" name="submit" value="verzenden">
         </p>
     </form>
-    <p><a href="records.php">Bekijk alle opgeslagen records</a></p>
+    <p><a href="index_records.php">Bekijk alle opgeslagen records</a></p>
     <p><a href="../..">ga terug</a></p>
 </body>
 

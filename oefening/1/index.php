@@ -1,4 +1,4 @@
 <?php
 
 $message = "My cool message :sunglasses:";
-include_once("view.php");
+include_once("index_view.php");

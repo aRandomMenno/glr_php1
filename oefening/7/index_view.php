@@ -20,16 +20,3 @@
 </body>
 
 </html>
-
-<!-- 
-$data = [
-    "creation_date" => date("Y-m-d H:i:s"),
-    "name" => $name,
-    "email" => $email,
-    "age" => $age,
-    "phone_number" => $phone_number,
-    "birthday" => $birthday,
-    "password" => password_hash($password, PASSWORD_DEFAULT), // HASHING FOR SECURITY!!!
-    "bio" => $bio
-];
--->

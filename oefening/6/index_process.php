@@ -4,7 +4,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $name = $_POST['name'];
     $age = $_POST['age'];
 
-    include_once("view.php");
+    include_once("index_view.php");
 }
 else {
     $error = "Om deze pagina te gebruiken moet je het formulier invullen.";

@@ -98,7 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $data_file = $data_dir . '/student_records.txt';
     file_put_contents($data_file, json_encode($data) . PHP_EOL, FILE_APPEND);
 
-    include_once "view.php";
+    include_once "index_view.php";
 } else {
     header('location: index.php');
     exit;
