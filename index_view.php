@@ -14,12 +14,12 @@
 <body>
     <h1>Hallo welkom bij PHP :)</h1>
     <p>
-        Mijn naam is <?= $my_name ?>, en ik zit in klas <?= $my_class ?>. And I am <?= $my_age ?> years old.
+        Mijn naam is <?= $myName ?>, en ik zit in klas <?= $myClass ?>. And I am <?= $myAge ?> years old.
     </p>
     <h2>Oefeningen</h2>
     <ul>
         <?php
-        for ($i = 1; $i <= $number_of_exercises; $i++):
+        for ($i = 1; $i <= $numberOfExercises; $i++):
             ?>
             <li><a href="oefening/<?= $i ?>/">Oefening <?= $i ?></a></li>
         <?php endfor; ?>
@@ -28,7 +28,7 @@
     <h2>Opdrachten</h2>
     <ul>
         <?php
-        for ($i = 1; $i <= $number_of_assignments; $i++):
+        for ($i = 1; $i <= $numberOfAssignments; $i++):
             ?>
             <li><a href="opdracht/<?= $i ?>/">Opdracht <?= $i ?></a></li>
         <?php endfor; ?>

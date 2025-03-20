@@ -12,10 +12,10 @@
 </head>
 
 <body>
-    <h1>Welkom op de pagina van <?= $my_name ?></h1>
+    <h1>Welkom op de pagina van <?= $myName ?></h1>
     <?php
-    for ($i = 1; $i <= 20; $i++) {
-        if ($i == $my_age) {
+    for ($i = 1; $i <= $myAge + 3; $i++) {
+        if ($i == $myAge) {
             ?>
             <p>Mijn leeftijd is <?= $i ?> jaar</p> <?php
         } else {

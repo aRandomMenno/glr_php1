@@ -22,7 +22,7 @@ if (isset($_GET['error'])) {
     <div id="error_message" <?php
     if ($error == '') { ?> hidden <?php }
     ?>>
-        <?php echo htmlspecialchars($error); ?>
+        <?= htmlspecialchars($error) ?>
     </div>
     <form action="index_process.php" method="POST">
         <p>

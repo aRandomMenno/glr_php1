@@ -1,16 +1,16 @@
 <?php
-$total_grade = 0;
+$totalGrade = 0;
 $grade_count = 0;
 
-foreach ($classes_grades as $subject => $grade) {
+foreach ($classesGrades as $subject => $grade) {
     if (!empty($grade)) {
-        $total_grade += $grade;
+        $totalGrade += $grade;
         $grade_count++;
     }
 }
 
-$average_grade = ($grade_count > 0) ? round($total_grade / $grade_count, 1) : 0;
-$grade_color = $average_grade >= 5.5 ? 'green' : 'red';
+$averageGrade = ($grade_count > 0) ? round($totalGrade / $grade_count, 1) : 0;
+$grade_color = $averageGrade >= 5.5 ? 'green' : 'red';
 ?>
 
 <!DOCTYPE html>
@@ -29,9 +29,9 @@ $grade_color = $average_grade >= 5.5 ? 'green' : 'red';
     <div class="student-card">
         <div class="student-info">
             <h1>Student Resultaten</h1>
-            <p><strong>Naam:</strong> <?php echo htmlspecialchars($name); ?></p>
-            <p><strong>Studentnummer:</strong> <?php echo htmlspecialchars($student_number); ?></p>
-            <p><strong>Klas:</strong> <?php echo htmlspecialchars($class); ?></p>
+            <p><strong>Naam:</strong> <?= htmlspecialchars($name); ?></p>
+            <p><strong>Studentnummer:</strong> <?= htmlspecialchars($student_number); ?></p>
+            <p><strong>Klas:</strong> <?= htmlspecialchars($class); ?></p>
         </div>
 
         <h2>Vakken en cijfers</h2>
@@ -43,11 +43,11 @@ $grade_color = $average_grade >= 5.5 ? 'green' : 'red';
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($classes_grades as $subject => $grade): ?>
+                <?php foreach ($classesGrades as $subject => $grade): ?>
                     <?php if (!empty($subject)): ?>
                         <tr>
-                            <td><?php echo htmlspecialchars($subject); ?></td>
-                            <td><?php echo htmlspecialchars($grade); ?></td>
+                            <td><?= htmlspecialchars($subject); ?></td>
+                            <td><?= htmlspecialchars($grade); ?></td>
                         </tr>
                     <?php endif; ?>
                 <?php endforeach; ?>
@@ -56,7 +56,7 @@ $grade_color = $average_grade >= 5.5 ? 'green' : 'red';
 
         <div class="average">
             <p>
-                Gemiddeld cijfer: <span class="grade-<?php echo $grade_color; ?>"><?php echo $average_grade; ?></span>
+                Gemiddeld cijfer: <span class="grade-<?= $grade_color; ?>"><?= $averageGrade; ?></span>
             </p>
         </div>
     </div>

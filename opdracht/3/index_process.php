@@ -7,9 +7,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $errors[] = "Naam is verplicht";
     }
 
-    if (empty($_POST['student_number'])) {
+    if (empty($_POST['studentNumber'])) {
         $errors[] = "Studentnummer is verplicht";
-    } elseif (!preg_match('/^[0-9]{6}$/', $_POST['student_number'])) {
+    } elseif (!preg_match('/^[0-9]{6}$/', $_POST['studentNumber'])) {
         $errors[] = "Studentnummer moet uit precies 6 cijfers bestaan";
     }
 
@@ -19,16 +19,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $errors[] = "Klas moet het format D1-3A-F1-2 hebben";
     }
 
-    $required_fields = ['class_1', 'class_2', 'class_3', 'class_4'];
-    foreach ($required_fields as $field) {
+    $requiredFields = ['class_1', 'class_2', 'class_3', 'class_4'];
+    foreach ($requiredFields as $field) {
         if (empty($_POST[$field])) {
             $errors[] = "Alle vaknamen zijn verplicht";
             break;
         }
     }
 
-    $grade_fields = ['grade_1', 'grade_2', 'grade_3', 'grade_4'];
-    foreach ($grade_fields as $field) {
+    $gradeFields = ['grade_1', 'grade_2', 'grade_3', 'grade_4'];
+    foreach ($gradeFields as $field) {
         if (!isset($_POST[$field])) {
             $errors[] = "Alle cijfers zijn verplicht";
             break;
@@ -41,62 +41,62 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
     }
 
-    $class_values = array_filter([
+    $classValues = array_filter([
         $_POST['class_1'] ?? '',
         $_POST['class_2'] ?? '',
         $_POST['class_3'] ?? '',
         $_POST['class_4'] ?? '',
     ]);
 
-    if (count($class_values) !== count(array_unique($class_values))) {
+    if (count($classValues) !== count(array_unique($classValues))) {
         $errors[] = "Vaknamen moeten uniek zijn";
     }
 
     if (!empty($errors)) {
-        $error_message = implode("; ", $errors);
-        header('location: index.php?error=' . urlencode($error_message));
+        $errorMessage = implode("; ", $errors);
+        header('location: index.php?error=' . urlencode($errorMessage));
         exit;
     }
 
     $name = $_POST['name'];
-    $student_number = $_POST['student_number'];
+    $studentNumber = $_POST['studentNumber'];
     $class = $_POST['class'];
 
-    $classes_grades = [
+    $classesGrades = [
         $_POST['class_1'] => $_POST['grade_1'],
         $_POST['class_2'] => $_POST['grade_2'],
         $_POST['class_3'] => $_POST['grade_3'],
         $_POST['class_4'] => $_POST['grade_4'],
     ];
 
-    $total_grade = 0;
-    $grade_count = 0;
+    $totalGrade = 0;
+    $gradeCount = 0;
 
-    foreach ($classes_grades as $subject => $grade) {
+    foreach ($classesGrades as $subject => $grade) {
         if (!empty($grade)) {
-            $total_grade += $grade;
-            $grade_count++;
+            $totalGrade += $grade;
+            $gradeCount++;
         }
     }
 
-    $average_grade = ($grade_count > 0) ? round($total_grade / $grade_count, 1) : 0;
+    $averageGrade = ($gradeCount > 0) ? round($totalGrade / $gradeCount, 1) : 0;
 
     $data = [
         'timestamp' => date('Y-m-d H:i:s'),
         'name' => $name,
-        'student_number' => $student_number,
+        'studentNumber' => $studentNumber,
         'class' => $class,
-        'classes_grades' => $classes_grades,
-        'average_grade' => $average_grade,
+        'classesGrades' => $classesGrades,
+        'averageGrade' => $averageGrade,
     ];
 
-    $data_dir = __DIR__ . '/data';
-    if (!file_exists($data_dir)) {
-        mkdir($data_dir, 0755, true);
+    $dataDir = __DIR__ . '/data';
+    if (!file_exists($dataDir)) {
+        mkdir($dataDir, 0755, true);
     }
 
-    $data_file = $data_dir . '/student_records.txt';
-    file_put_contents($data_file, json_encode($data) . PHP_EOL, FILE_APPEND);
+    $dataFile = $dataDir . '/student_records.txt';
+    file_put_contents($dataFile, json_encode($data) . PHP_EOL, FILE_APPEND);
 
     include_once "index_view.php";
 } else {

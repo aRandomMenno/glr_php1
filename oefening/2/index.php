@@ -1,7 +1,7 @@
 <?php
 
-$my_name = "Menno Van Zoelen";
-$my_age = 17;
-$api_key = "THE_KEY";
+$myName = "Menno Van Zoelen";
+$myAge = 17;
+$apiKey = "THE_KEY.txt";
 
 include_once("index_view.php");

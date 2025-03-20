@@ -1,9 +1,9 @@
 <?php
 $records = [];
-$data_file = __DIR__ . '/data/student_records.txt';
+$dataFile = __DIR__ . '/data/student_records.txt';
 
-if (file_exists($data_file)) {
-    $lines = file($data_file, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+if (file_exists($dataFile)) {
+    $lines = file($dataFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
     foreach ($lines as $line) {
         $records[] = json_decode($line, true);
     }
@@ -35,7 +35,7 @@ if (file_exists($data_file)) {
                 <div class="record-card">
                     <div class="student-info">
                         <h2>Student: <?= htmlspecialchars($record['name']) ?></h2>
-                        <p><strong>Studentnummer:</strong> <?= htmlspecialchars($record['student_number']) ?></p>
+                        <p><strong>Studentnummer:</strong> <?= htmlspecialchars($record['studentNumber']) ?></p>
                         <p><strong>Klas:</strong> <?= htmlspecialchars($record['class']) ?></p>
                     </div>
 
@@ -48,7 +48,7 @@ if (file_exists($data_file)) {
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($record['classes_grades'] as $subject => $grade): ?>
+                            <?php foreach ($record['classesGrades'] as $subject => $grade): ?>
                                 <tr>
                                     <td><?= htmlspecialchars($subject) ?></td>
                                     <td><?= htmlspecialchars($grade) ?></td>
@@ -60,8 +60,8 @@ if (file_exists($data_file)) {
                     <div class="average">
                         <p>
                             Gemiddeld cijfer:
-                            <span class="grade-<?= $record['average_grade'] >= 5.5 ? 'green' : 'red' ?>">
-                                <?= $record['average_grade'] ?>
+                            <span class="grade-<?= $record['averageGrade'] >= 5.5 ? 'green' : 'red' ?>">
+                                <?= $record['averageGrade'] ?>
                             </span>
                         </p>
                     </div>

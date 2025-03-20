@@ -28,8 +28,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             "birthday" => $birthday,
         ];
 
-        $data_file = "records.txt";
-        $file = fopen($data_file, "a");
+        $dataFile = "records.txt";
+        $file = fopen($dataFile, "a");
         if ($file) {
             $data_string = $name . "," . $surname . "," . $birthday . "\n";
             fwrite($file, $data_string);

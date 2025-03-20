@@ -4,7 +4,7 @@ $errors = [];
 $email = filter_var(trim($_POST["email"] ?? ""), FILTER_SANITIZE_EMAIL);
 $age = filter_var(trim($_POST["age"] ?? ""), FILTER_SANITIZE_NUMBER_INT);
 $name = strip_tags(htmlspecialchars(trim($_POST["name"] ?? "")));
-$phone_number = preg_replace('/[^0-9+\s\-()]/', '', trim($_POST["tel"] ?? ""));
+$phoneNumber = preg_replace('/[^0-9+\s\-()]/', '', trim($_POST["tel"] ?? ""));
 $birthday = trim($_POST["date"] ?? "");
 $password = trim($_POST["password"] ?? "");
 $bio = strip_tags(htmlspecialchars(trim($_POST["bio"] ?? "")));
@@ -30,9 +30,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors["age"] = "Je mag niet ouder dan 100 jaar zijn!";
     }
 
-    if (empty($phone_number)) {
+    if (empty($phoneNumber)) {
         $errors["tel"] = "Telefoonnummer is een verplicht veld!";
-    } else if (!preg_match('/^[0-9+\s\-()]{10,15}$/', $phone_number)) {
+    } else if (!preg_match('/^[0-9+\s\-()]{10,15}$/', $phoneNumber)) {
         $errors["tel"] = "Telefoonnummer is niet geldig!";
     }
 
@@ -76,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($bio)) {
         $errors["bio"] = "Biografie is een verplicht veld!";
     } else {
-        $word_count = str_word_count($bio);
+        $wordCount = str_word_count($bio);
         if ($word_count < 100) {
             $errors["bio"] = "Biografie moet minstens 100 woorden bevatten! (Nu: $word_count)";
         }
@@ -88,19 +88,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             "name" => $name,
             "email" => $email,
             "age" => $age,
-            "phone_number" => $phone_number,
+            "phoneNumber" => $phoneNumber,
             "birthday" => $birthday,
             "password" => password_hash($password, PASSWORD_DEFAULT), // HASHING FOR SECURITY!!!
             "bio" => $bio
         ];
 
-        $data_dir = __DIR__ . "/data";
-        if (!file_exists($data_dir)) {
-            mkdir($data_dir, 0755, true);
+        $dataDir = __DIR__ . "/data";
+        if (!file_exists($dataDir)) {
+            mkdir($dataDir, 0755, true);
         }
 
-        $data_file = $data_dir . "/records.txt";
-        file_put_contents($data_file, json_encode($data) . PHP_EOL, FILE_APPEND);
+        $dataFile = $dataDir . "/records.txt";
+        file_put_contents($dataFile, json_encode($data) . PHP_EOL, FILE_APPEND);
 
         include "index_view.php";
     } else {

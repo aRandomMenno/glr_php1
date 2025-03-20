@@ -1,12 +1,10 @@
 <?php
 
-$my_name = "Menno Van Zoelen";
-$my_class = "D1D(2)";
-$my_age = 17;
+$myName = "Menno Van Zoelen";
+$myClass = "D1D(2)";
+$myAge = 17;
 
-$number_of_exercises = 9;
-$number_of_assignments = 3;
+$numberOfExercises = 9;
+$numberOfAssignments = 4;
 
 include_once("index_view.php");
-
-// ~ Maak nog opdracht 3.4?
