@@ -102,7 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $dataFile = $dataDir . "/records.txt";
         file_put_contents($dataFile, json_encode($data) . PHP_EOL, FILE_APPEND);
 
-        include "index_view.php";
+        include "index_process_view.php";
     } else {
         include "index.php";
     }

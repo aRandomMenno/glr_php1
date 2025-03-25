@@ -84,7 +84,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             fwrite($file, $dataString);
             fclose($file);
 
-            include_once "index_view.php";
+            include_once "index_process_view.php";
         } else {
             $errors[] = "Kon niet schrijven naar bestand!";
         }

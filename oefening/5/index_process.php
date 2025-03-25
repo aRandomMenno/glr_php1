@@ -20,4 +20,4 @@ if (isset($_GET["naam"]) && !empty($_GET["naam"])) {
     exit();
 }
 
-include_once("index_view.php");
+include_once("index_process_view.php");

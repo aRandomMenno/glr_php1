@@ -12,17 +12,9 @@
 </head>
 
 <body>
-    <?php if (!empty($error)): ?>
-        <div style="color: red;">
-            <p><?= htmlspecialchars($error) ?></p>
-        </div>
-    <?php endif; ?>
-
-    <form action="index_process.php" method="post">
-        <p><label for="name">Wat is je naam?: </label><input type="text" name="name" id="name"></p>
-        <p><label for="age">Wat is je leeftijd?: </label><input type="number" name="age" id="age"></p>
-        <p><input type="submit" name="submit" value="verzenden"></p>
-    </form>
+    <p>
+        Jouw naam is <?= $name ?> en je bent <?= $age ?> jaar oud?
+    </p>
     <p><a href="../..">ga terug</a></p>
 </body>
 
